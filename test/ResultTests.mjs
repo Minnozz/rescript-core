@@ -11,7 +11,7 @@ function forEachIfOkCallFunction(param) {
     contents: []
   };
   Core__Result.forEach({
-        TAG: /* Ok */0,
+        TAG: "Ok",
         _0: 3
       }, (function (i) {
           called.contents.push(i);
@@ -34,7 +34,7 @@ function forEachIfErrorDoNotCallFunction(param) {
     contents: []
   };
   Core__Result.forEach({
-        TAG: /* Error */1,
+        TAG: "Error",
         _0: 3
       }, (function (i) {
           called.contents.push(i);

@@ -3,7 +3,7 @@
 import * as Curry from "rescript/lib/es6/curry.js";
 
 function getExn(x) {
-  if (x.TAG === /* Ok */0) {
+  if (x.TAG === "Ok") {
     return x._0;
   }
   throw {
@@ -14,7 +14,7 @@ function getExn(x) {
 
 function mapWithDefault(opt, $$default, f) {
   var f$1 = Curry.__1(f);
-  if (opt.TAG === /* Ok */0) {
+  if (opt.TAG === "Ok") {
     return f$1(opt._0);
   } else {
     return $$default;
@@ -23,14 +23,14 @@ function mapWithDefault(opt, $$default, f) {
 
 function map(opt, f) {
   var f$1 = Curry.__1(f);
-  if (opt.TAG === /* Ok */0) {
+  if (opt.TAG === "Ok") {
     return {
-            TAG: /* Ok */0,
+            TAG: "Ok",
             _0: f$1(opt._0)
           };
   } else {
     return {
-            TAG: /* Error */1,
+            TAG: "Error",
             _0: opt._0
           };
   }
@@ -38,18 +38,18 @@ function map(opt, f) {
 
 function flatMap(opt, f) {
   var f$1 = Curry.__1(f);
-  if (opt.TAG === /* Ok */0) {
+  if (opt.TAG === "Ok") {
     return f$1(opt._0);
   } else {
     return {
-            TAG: /* Error */1,
+            TAG: "Error",
             _0: opt._0
           };
   }
 }
 
 function getWithDefault(opt, $$default) {
-  if (opt.TAG === /* Ok */0) {
+  if (opt.TAG === "Ok") {
     return opt._0;
   } else {
     return $$default;
@@ -57,7 +57,7 @@ function getWithDefault(opt, $$default) {
 }
 
 function isOk(x) {
-  if (x.TAG === /* Ok */0) {
+  if (x.TAG === "Ok") {
     return true;
   } else {
     return false;
@@ -65,7 +65,7 @@ function isOk(x) {
 }
 
 function isError(x) {
-  if (x.TAG === /* Ok */0) {
+  if (x.TAG === "Ok") {
     return false;
   } else {
     return true;
@@ -74,13 +74,13 @@ function isError(x) {
 
 function eq(a, b, f) {
   var f$1 = Curry.__2(f);
-  if (a.TAG === /* Ok */0) {
-    if (b.TAG === /* Ok */0) {
+  if (a.TAG === "Ok") {
+    if (b.TAG === "Ok") {
       return f$1(a._0, b._0);
     } else {
       return false;
     }
-  } else if (b.TAG === /* Ok */0) {
+  } else if (b.TAG === "Ok") {
     return false;
   } else {
     return true;
@@ -89,13 +89,13 @@ function eq(a, b, f) {
 
 function cmp(a, b, f) {
   var f$1 = Curry.__2(f);
-  if (a.TAG === /* Ok */0) {
-    if (b.TAG === /* Ok */0) {
+  if (a.TAG === "Ok") {
+    if (b.TAG === "Ok") {
       return f$1(a._0, b._0);
     } else {
       return 1;
     }
-  } else if (b.TAG === /* Ok */0) {
+  } else if (b.TAG === "Ok") {
     return -1;
   } else {
     return 0;
@@ -103,7 +103,7 @@ function cmp(a, b, f) {
 }
 
 function forEach(r, f) {
-  if (r.TAG === /* Ok */0) {
+  if (r.TAG === "Ok") {
     return Curry._1(f, r._0);
   }
   
