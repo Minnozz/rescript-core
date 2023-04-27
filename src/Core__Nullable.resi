@@ -9,7 +9,7 @@ Type representing a nullable value.
 A nullable value can be the value `'a`, `null` or `undefined`.
 */
 @unboxed
-type t<'a> = Js.Nullable.t<'a> = Present('a) | @as(null) Null | @as(undefined) Undefined
+type t<'a> = Js.Nullable.t<'a> = Value('a) | @as(null) Null | @as(undefined) Undefined
 
 /**
 The value `null`.
