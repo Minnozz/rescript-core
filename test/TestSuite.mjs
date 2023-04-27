@@ -7,6 +7,7 @@ import * as ArrayTests from "./ArrayTests.mjs";
 import * as ErrorTests from "./ErrorTests.mjs";
 import * as PromiseTest from "./PromiseTest.mjs";
 import * as ResultTests from "./ResultTests.mjs";
+import * as NullableTests from "./NullableTests.mjs";
 
 var bign = TestTests.bign;
 
@@ -38,6 +39,8 @@ var forEachIfErrorDoNotCallFunction = ResultTests.forEachIfErrorDoNotCallFunctio
 
 var decodeJsonTest = JsonTests.decodeJsonTest;
 
+var shouldHandleNullableValues = NullableTests.shouldHandleNullableValues;
+
 export {
   bign ,
   TestError ,
@@ -54,5 +57,6 @@ export {
   forEachIfOkCallFunction ,
   forEachIfErrorDoNotCallFunction ,
   decodeJsonTest ,
+  shouldHandleNullableValues ,
 }
 /* IntTests Not a pure module */
